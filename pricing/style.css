@@ -1,0 +1,228 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 3%;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4%;
+    padding: 12% 0;
+}
+
+.card {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+}
+
+.card_title {
+    font-weight: normal;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.pricing {
+    font-weight: normal;
+    font-size: 66px;
+}
+
+.pricing .small {
+    font-size: 16px;
+}
+
+hr {
+    margin-top: 40px;
+}
+
+.features {
+    margin: 40px 0;
+    list-style-position: inside;
+}
+
+.features li {
+    padding-bottom: 10px;
+}
+
+a.cta_btn {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background: rgba(21, 23, 24, 0.7);
+    border-radius: 29px;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: background .3s ease;
+    border: 1px solid blueviolet;
+}
+
+a.cta_btn:hover {
+    background:blueviolet;
+}
+
+.link {
+    position: fixed;
+    background-color: #D12322;
+    padding: 23px 40px;
+    right: -99px;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-90deg);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .1s ease-in-out;
+}
+
+.link i {
+    padding-left: 7px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    background-color: black;
+}
+h1 {
+    width: 100vw;
+    background: black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: calc(var(--size) * .55 + var(--gap));
+    padding: 2vh 0;
+    text-align: center;
+    color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    border-bottom: white 1px solid;
+}
+
+
+.footer {
+    width: 100vw;
+    background: black;
+    position: sticky;
+    top: 0;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    padding: 2vh 0;
+    text-align: center;
+    color: greenyellow;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+}
+
+@media only screen and (max-width: 1024px) {
+    /* .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2%;
+
+    } */
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /* .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+        padding-bottom: 25%;
+    } */
+
+    /* .container {
+        padding: 0 1rem;
+    } */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .card_title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .pricing {
+        font-size: 52px;
+    }
+
+    hr {
+        margin-top: 50px;
+    }
+
+    a.cta_btn {
+        font-size: 11px;
+    }
+    .features{
+        overflow: scroll;
+    }
+}
+
+
+
+
+
+/* 
+form css */
+
+.order_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+#details{
+  background-color: wheat;
+    color: aliceblue;
+    padding: 15px;
+    border: 1px wheat solid;
+    margin: 5px;
+    font-size: 18px;
+    box-shadow: 0 0 3em blueviolet;
+}
+.submitButton{
+    font-size: 20px;
+    padding: 15px;
+    color: black;
+    background-color: greenyellow;
+}
+
