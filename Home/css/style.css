@@ -72,8 +72,12 @@
      cursor: pointer;
      transform: scale(110%);
  }
- @media screen and (min-width: 480px){
+ @media screen and (max-width: 600px){
     .welcome {
             display: block;
         }
+    .cartoonPic{
+        height: 200px;
+        width: 85%;
+    }
  }
