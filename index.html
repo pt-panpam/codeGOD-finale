@@ -129,7 +129,7 @@
             </div>
             <script>
                 function form() {
-                    window.open("form.html")
+                    window.open("https://wa.me/919027383736/?text=I_am_looking_for_website_development")
                 }
             </script>
         </div>
@@ -214,7 +214,7 @@
                         <span class="w3-opacity">per room</span>
                     </li>
                     <li class="w3-light-grey w3-padding-24">
-                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+                        <a class="w3-button w3-grey w3-padding-large w3-hover-black" href="https://wa.me/919027383736/?text=I_am_looking_for_website_development">Order Now</a>
                     </li>
                 </ul>
             </div>
@@ -247,7 +247,7 @@
                         <span class="w3-opacity">per year</span>
                     </li>
                     <li class="w3-light-white w3-padding-24">
-                        <button class="w3-button w3-blue w3-padding-large w3-hover-black">Sign Up</button>
+                        <a class="w3-button w3-blue w3-padding-large w3-hover-black" href="https://wa.me/919027383736/?text=I_am_looking_for_website_development">Order Now</a>
                     </li>
                 </ul>
             </div>
@@ -260,7 +260,7 @@
             <hr style="width:50px;border:5px solid skyblue" class="w3-round">
             <p>Do you want us to build your Website? Fill out the form and fill me in with the details :) We love meeting
                 new people!</p>
-            <form action="/action_page.php" target="_blank">
+            <form action="https://script.google.com/macros/s/AKfycbz9_eWFsZ71Hg13h3gGmCwU9w0wJqsm_LAsQWf8WgJ1kvoqCm78r35104K_QFAfQJ9G/exec" method="post" target="_blank">
                 <div class="w3-section">
                     <label>Name</label>
                     <input class="w3-input w3-border" type="text" name="Name" required>
@@ -277,10 +277,61 @@
                     <label>Message</label>
                     <input class="w3-input w3-border" type="text" name="Message" required>
                 </div>
-                <button type="submit" class="w3-button w3-block w3-padding-large w3-blue w3-margin-bottom">Send
+                <button onclick="thanks()" type="submit" class="w3-button w3-block w3-padding-large w3-blue w3-margin-bottom">Send
                     Message</button>
             </form>
         </div>
+
+        <script>
+                // Meri Script
+                function thanks(){
+                    window.open("thanks.html","_self")
+                }
+
+            // Original code from https://github.com/jamiewilson/form-to-google-sheets
+                // Updated for 2021 and ES6 standards
+
+                const sheetName = 'Sheet1'
+                const scriptProp = PropertiesService.getScriptProperties()
+
+                function initialSetup() {
+                    const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+                    scriptProp.setProperty('key', activeSpreadsheet.getId())
+                }
+
+                function doPost(e) {
+                    const lock = LockService.getScriptLock()
+                    lock.tryLock(10000)
+
+                    try {
+                        const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+                        const sheet = doc.getSheetByName(sheetName)
+
+                        const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+                        const nextRow = sheet.getLastRow() + 1
+
+                        const newRow = headers.map(function (header) {
+                            return header === 'Date' ? new Date() : e.parameter[header]
+                        })
+
+                        sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+
+                        return ContentService
+                            .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+                            .setMimeType(ContentService.MimeType.JSON)
+                    }
+
+                    catch (e) {
+                        return ContentService
+                            .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+                            .setMimeType(ContentService.MimeType.JSON)
+                    }
+
+                    finally {
+                        lock.releaseLock()
+                    }
+                }
+        </script>
 
         <!-- End page content -->
     </div>
