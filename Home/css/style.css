@@ -30,8 +30,8 @@
 }
 
 .cartoonPic{
-    height: 300px;
-    width: 570px;
+    height: 270px;
+    width: 530px;
     margin: 20px;
 }
 
@@ -71,4 +71,9 @@
  .templateicon:hover {
      cursor: pointer;
      transform: scale(110%);
+ }
+ @media screen and (min-width: 480px){
+    .welcome {
+            display: block;
+        }
  }
