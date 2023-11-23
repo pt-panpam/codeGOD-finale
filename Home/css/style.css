@@ -21,8 +21,19 @@
  .w3-half img:hover {
      opacity: 1
  }
+.welcome{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0;
+}
 
-
+.cartoonPic{
+    height: 300px;
+    width: 570px;
+    margin: 20px;
+}
 
  .templatecontainer {
      display: flex;
@@ -43,7 +54,7 @@
      font-size: 20px;
      margin-top: 10px;
      border-radius: 40px;
-     border: red 2px solid;
+     border: skyblue 2px solid;
      background-color: white;
 
  }
