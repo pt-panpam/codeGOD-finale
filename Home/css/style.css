@@ -83,6 +83,12 @@
     font-weight: bold;
     border: rgb(69, 137, 247) 2px solid;
  }
+ .DnO:hover{
+    background-color: gray;
+    color: white;
+    border: gray 2px solid;
+    cursor: pointer;
+ }
 
  Social Media CSS
 
