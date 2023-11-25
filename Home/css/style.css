@@ -4,7 +4,7 @@
  h3,
  h4,
  h5 {
-     font-family: "Poppins", sans-serif
+     font-family: "Poppins", sans-serif;
  }
 
  body {
@@ -47,7 +47,7 @@
  }
 
  .templateimage {
-     height: 200px;
+     height: 280px;
      width: 300px;
      text-align: center;
      font-variant: small-caps;
@@ -72,6 +72,21 @@
      cursor: pointer;
      transform: scale(110%);
  }
+ .DnO{
+    background-color: rgb(69, 137, 247);
+    color: white;
+    border-radius: 20px;
+    font-size: 17px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-variant: normal;
+    font-weight: bold;
+    border: rgb(69, 137, 247) 2px solid;
+ }
+
+ Social Media CSS
+
+
  @media screen and (max-width: 600px){
     .welcome {
             display: block;
